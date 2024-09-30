@@ -19,11 +19,13 @@ public class Cart {
         System.out.println();
     }
 
-    public void addDigitalVideoDisc(DigitalVideoDisc dvd) {
-        if (getQtyOrdered() < 20) {
-            // DigitalVideoDisc newOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
-            itemsOrdered[qtyOrdered] = dvd;
-            qtyOrdered++;
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        if (getQtyOrdered() + dvdList.length < 20) {
+            for (int i = 0; i < dvdList.length; i++) {
+                itemsOrdered[qtyOrdered + i] = dvdList[i];
+            }
+            qtyOrdered += dvdList.length;
+            
             System.out.println("The disc has been added, " + qtyOrdered + " discs");
         } else {
             System.out.println("The cart is full");
@@ -31,6 +33,7 @@ public class Cart {
         printOrdered();
 
     }
+    
     public void removeDigitalVideoDisc(DigitalVideoDisc dvd) {
         int index = -1;
         for (int i = 0; i < qtyOrdered; i++) {
