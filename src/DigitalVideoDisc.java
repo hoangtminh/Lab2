@@ -9,7 +9,7 @@ public class DigitalVideoDisc {
     private static int nbDigitalVideoDisc = 0;
     
     public DigitalVideoDisc(String title) {
-        this.title = title;
+        this.title = title.toString();
         nbDigitalVideoDisc++;
         this.id = nbDigitalVideoDisc;
     }

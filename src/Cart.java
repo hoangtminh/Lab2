@@ -56,4 +56,15 @@ public class Cart {
 
         printOrdered();
     }
+
+    public void searchDiscByTitle(String title) {
+        System.out.println();
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (title.equals(itemsOrdered[i].getTitle())) {
+                System.out.println("Disc with " + title + " title: " + itemsOrdered[i].getTitle());
+                return;
+            }
+        }
+        System.out.println("There's no Disc with " + title + " title");
+    }
 }

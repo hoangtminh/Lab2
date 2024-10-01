@@ -13,5 +13,6 @@ public class Aims {
         anOrder.addDigitalVideoDisc(dvdList);
         
         System.out.println(anOrder.getQtyOrdered());
+        anOrder.searchDiscByTitle("3");
     }
 }
